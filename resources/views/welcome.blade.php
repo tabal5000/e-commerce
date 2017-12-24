@@ -79,7 +79,12 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    LaravelTastic
+                    <ul>
+                        @foreach ($items as $item)
+                            <li> {{ $item->description }} </li>
+                        @endforeach
+                    </ul>
                 </div>
 
                 <div class="links">
