@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+Use App\Item;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +17,14 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::get('/items','ItemsAPIController@index');
+
+Route::get('/items/{item}','ItemsAPIController@show');
+
+Route::post('/items','ItemsAPIController@store');
+
+Route::put('/items/{item}', 'ItemsAPIController@update');
+
+Route::delete('/items/{item}', 'ItemsAPIController@delete');
