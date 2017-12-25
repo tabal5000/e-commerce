@@ -34,10 +34,32 @@
                  <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
+                             <label for="inputImageLink" class="control-label col-xs-2">Image URL</label>
+                         </div>
+                         <div class="col-sm-10">
+                             <input type="text" class="form-control" id="img_url" name="img_url" > </textarea>
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="row">
+                     <div class="form-group">
+                         <div class="col-sm-2">
                              <label for="inputPrice" class="control-label col-xs-2">Price</label>
                          </div>
                          <div class="col-sm-3">
-                             <input type="number" class="form-control" id="price" name="price" placeholder="Price" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
+                             <input type="number" class="form-control" id="price" name="price" placeholder="Price" step="0.01">
+                         </div>
+                     </div>
+                 </div>
+
+                 <div class="row">
+                     <div class="form-group">
+                         <div class="col-sm-2">
+                             <label for="inputStock" class="control-label col-xs-2">Stock</label>
+                         </div>
+                         <div class="col-sm-3">
+                             <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
                          </div>
                      </div>
                  </div>

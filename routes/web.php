@@ -4,7 +4,7 @@ Route::get('/items','ItemsController@index');
 
 Route::get('/items/create','ItemsController@create');
 
-Route::get('/items/{item}','ItemsController@show');
+Route::get('/items/{id}','ItemsController@show');
 
 // post
 

@@ -3,16 +3,20 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use \Illuminate\Support\Facades\Route;
 use App\Item;
 
 class ItemsController extends Controller
 {
     public function index() {
-        $items = Item::all();
+        $request = Request::create('/api/items', 'GET');
+        $items = Route::dispatch($request)->getData();
         return view('items/index',compact('name','items'));
     }
 
-    public function show(Item $item) {
+    public function show($id) {
+        $request = Request::create('/api/items/' . $id , 'GET');
+        $item = Route::dispatch($request)->getData();
     	return view('items/show',compact('item'));
     }
 
@@ -27,13 +31,16 @@ class ItemsController extends Controller
         // $post->description = request('description');
         // $post->price = request('price');
         // $post->save();
-
         $this->validate(request(), [
             'title' => 'required',
-            'description' => 'required'
+            'price' => 'required',
+            'stock' => 'required',
+            'description' => 'required',
+            'img_url' => 'required'
         ]);
-
-        Item::create(request()->all());
+        $data = request()->all();
+        $request = Request::create('/api/items','POST', $data);
+        $response = Route::dispatch($request);
         return redirect('/');
     }
 }
