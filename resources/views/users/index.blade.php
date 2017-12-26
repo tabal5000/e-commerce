@@ -47,17 +47,19 @@
                               @fa('edit', ['class' => 'faIcons']) Edit
                             </a>
                           </li>
-                          <!-- Try this one if the other one does not work.
+                          
+                          <!-- Try this one if the other one does not work. -->
 
-                          <li>
-                            <form method="post" action="/users/{{$user->id}}">
+                          <!-- <li>
+                            <form method="post" action="/users/{{$user->id}}" id="delUserForm">
                             {{ csrf_field() }}
                             {{ method_field('DELETE') }}
-                            <button type="submit" class="btn btn-link" id="submitDelUserForm">Delete</button>
+                            @fa('trash-alt', ['class' => 'faIcons'])
+                            <button type="submit" class="btn btn-link" id="submitDelUserForm"> Delete</button>
                             </form>
-                          </li>
+                          </li> -->
 
-                          -->
+
                           <li>
                             {{ Form::open(['url' => '/users/' . $user->id, 'method' => 'DELETE', 'id' => 'delUserForm']) }}
 
