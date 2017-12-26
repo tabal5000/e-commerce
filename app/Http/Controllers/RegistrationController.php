@@ -13,7 +13,7 @@ class RegistrationController extends Controller
       $this->middleware('guest');
     }
 
-    public function create() {
+    public function index() {
       return view('auth/register');
     }
 
@@ -33,6 +33,6 @@ class RegistrationController extends Controller
       $user = Route::dispatch($request)->original;
       auth()->login($user);
 
-      return redirect('/');
+      return redirect()->route('home');
     }
 }
