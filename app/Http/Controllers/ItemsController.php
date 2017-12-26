@@ -8,10 +8,15 @@ use App\Item;
 
 class ItemsController extends Controller
 {
+
+    public function __construct() {
+      $this->middleware('auth')->except(['index','show']);
+    }
+
     public function index() {
         $request = Request::create('/api/items', 'GET');
         $items = Route::dispatch($request)->getData();
-        return view('items/index',compact('name','items'));
+        return view('items/index',compact('items'));
     }
 
     public function show($id) {

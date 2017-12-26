@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>User not found.</title>
+    <title>404 error</title>
 </head>
 <body>
     {{ dd(get_defined_vars()) }}

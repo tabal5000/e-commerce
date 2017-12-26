@@ -8,7 +8,7 @@ class Item extends Model
 {
 
     protected $fillable =
-        ['title','description','price','stock','img_url'
+        ['title','description','price','img_url'
     ];
 
     public function inStock() {

@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/app')
 
 @section('content')
     <h7> {{ $item->id }}</h4>

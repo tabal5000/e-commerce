@@ -1,6 +1,8 @@
-@extends('layouts/master')
+@extends('layouts/app')
 
 @section('content')
+<div class="panel panel-default">
+  <div class="panel panel-body">
     <ul>
         @foreach ($items as $item)
             <li>
@@ -8,4 +10,6 @@
             </li>
         @endforeach
     </ul>
+  </div>
+</div>
 @endsection
