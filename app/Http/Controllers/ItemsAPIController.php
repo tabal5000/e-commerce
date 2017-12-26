@@ -9,12 +9,14 @@ class ItemsAPIController extends Controller
 {
     public function index()
     {
-        return Item::all();
+        $items = Item::all();
+
+        return response()->json($items,200);
     }
 
     public function show(Item $item)
     {
-        return $item;
+        return response()->json($item,200);
     }
 
     public function store(Request $request)

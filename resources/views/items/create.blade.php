@@ -1,4 +1,4 @@
-@extends('layouts/master')
+@extends('layouts/app')
 
 @section('content')
     <div class="panel panel-default">
@@ -12,9 +12,9 @@
                   <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
-                             <label for="itemName" class="control-label col-xs-2">Name</label>
+                             <label for="itemName" class="control-label">Name</label>
                          </div>
-                         <div class="col-sm-10">
+                         <div class="col-sm-9">
                              <input type="text" class="form-control" id="title" placeholder="Item name" name="title" >
                          </div>
                      </div>
@@ -23,9 +23,9 @@
                  <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
-                             <label for="inputDescription" class="control-label col-xs-2">Description</label>
+                             <label for="inputDescription" class="control-label">Description</label>
                          </div>
-                         <div class="col-sm-10">
+                         <div class="col-sm-9">
                              <textarea class="form-control" id="description" name="description" > </textarea>
                          </div>
                      </div>
@@ -34,9 +34,9 @@
                  <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
-                             <label for="inputImageLink" class="control-label col-xs-2">Image URL</label>
+                             <label for="inputImageLink" class="control-label">Image URL</label>
                          </div>
-                         <div class="col-sm-10">
+                         <div class="col-sm-9">
                              <input type="text" class="form-control" id="img_url" name="img_url" > </textarea>
                          </div>
                      </div>
@@ -45,7 +45,7 @@
                  <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
-                             <label for="inputPrice" class="control-label col-xs-2">Price</label>
+                             <label for="inputPrice" class="control-label">Price</label>
                          </div>
                          <div class="col-sm-3">
                              <input type="number" class="form-control" id="price" name="price" placeholder="Price" step="0.01">
@@ -56,7 +56,7 @@
                  <div class="row">
                      <div class="form-group">
                          <div class="col-sm-2">
-                             <label for="inputStock" class="control-label col-xs-2">Stock</label>
+                             <label for="inputStock" class="control-label">Stock</label>
                          </div>
                          <div class="col-sm-3">
                              <input type="number" class="form-control" id="stock" name="stock" placeholder="Stock" onkeypress='return event.charCode >= 48 && event.charCode <= 57'>
