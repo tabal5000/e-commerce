@@ -1,0 +1,10 @@
+https://github.com/PendoNL/laravel-
+
+Za file contents error:
+  1. sudo php artisan cache:clear
+  2. sudo chmod -R 777 storage/
+  3. composer dump-autoload
+
+  php artisan migrate:refresh
+
+  sudo php artisan db:seed

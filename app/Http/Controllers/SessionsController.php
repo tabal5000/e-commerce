@@ -11,7 +11,7 @@ class SessionsController extends Controller
       $this->middleware('guest')->except(['destroy']);
     }
 
-    public function create() {
+    public function index() {
       return view('auth/login');
     }
 
@@ -21,12 +21,12 @@ class SessionsController extends Controller
           'message' => 'Please check your credentials and try again.'
         ]);
       }
-      return redirect()->home();
+      return redirect()->back();
     }
 
     public function destroy() {
       auth()->logout();
-      return redirect('/');
+      return redirect()->route('home');
     }
 
 }
