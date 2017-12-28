@@ -47,7 +47,7 @@
                               @fa('edit', ['class' => 'faIcons']) Edit
                             </a>
                           </li>
-                          
+
                           <!-- Try this one if the other one does not work. -->
 
                           <!-- <li>

@@ -20,7 +20,7 @@ Route::resource('/register','RegistrationController', [
 //
 // Route::post('/register','RegistrationController@store');
 
-
+Route::resource('/items','ItemsController');
 
 Route::resource('/login','SessionsController', [
   'names' => [
