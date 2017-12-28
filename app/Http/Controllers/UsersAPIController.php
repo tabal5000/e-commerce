@@ -7,8 +7,9 @@ use App\User;
 
 class UsersAPIController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
+        dd($request);
         $users =  User::all();
 
         return response()->json($users,200);
@@ -29,6 +30,10 @@ class UsersAPIController extends Controller
           'email' => $data['email'],
           'password' => bcrypt($data['password']),
         ]);
+
+        $user
+            ->roles()
+            ->attach(App\Role::where('name','customer')->first());
 
         //dd($user);
 

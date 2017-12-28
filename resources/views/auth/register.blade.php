@@ -6,7 +6,7 @@
         <div class="col-md-8 col-md-offset-2">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h1 class="authHeaders"> {!! FontAwesome::icon('user-plus') !!} Register </h1>
+                  <h1 class="authHeaders">   @fa('user-plus', ['class' => 'faIcons']) Register </h1>
                 </div>
 
                 <div class="panel-body">
