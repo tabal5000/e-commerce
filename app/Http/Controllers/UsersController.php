@@ -25,6 +25,10 @@ class UsersController extends Controller
       return view('users/edit',compact('user'));
   }
 
+  public function show(User $user) {
+    return view('users/show',compact('user'));
+  }
+
   public function update(User $user) {
     $this->validate(request(), [
       'name' => 'required|string|max:255',
@@ -36,7 +40,7 @@ class UsersController extends Controller
     ]);
     $request = Request::create('/api/users/' . $user->id , 'PUT', [$user]);
     $response = Route::dispatch($request);
-    return redirect('/users');
+    return redirect()->back();
   }
 
 

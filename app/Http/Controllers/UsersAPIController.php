@@ -25,10 +25,9 @@ class UsersAPIController extends Controller
         return response()->json($users,200);
     }
 
-    public function show(User $user)
-    {
-        $user = User::find($user->id);
-        return resposne()->json($user,200);
+    public function show(User $user) {
+      $user = User::find($user->id);
+      return response()->json($user,200);
     }
 
     public function store(Request $data)
@@ -59,10 +58,8 @@ class UsersAPIController extends Controller
         'address' => $request['address'],
         'phone_number' => $request['phone_number'],
         'email' => $request['email'],
-        'active' => $request['active'],
         'password' => bcrypt($request['password']),
       ]);
-
       return response()->json($user, 200);
     }
 

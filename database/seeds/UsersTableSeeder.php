@@ -50,7 +50,7 @@ class UsersTableSeeder extends Seeder
       $staff->save();
       $staff->roles()->attach($role_staff);
 
-      for ($i = 0; $i < 10; $i++) {
+      for ($i = 0; $i < 20; $i++) {
           $user = User::create([
             'email' => $faker->email,
             'name' => $faker->firstName,
