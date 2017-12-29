@@ -34,10 +34,12 @@ Route::delete('/items/{item}', 'ItemsAPIController@delete');
 
 Route::get('/users','UsersAPIController@index');
 
-Route::get('/users/{user}','UsersAPIController@show');
 
 Route::post('/users', 'UsersAPIController@store');
 
 Route::put('/users/{user}','UsersAPIController@update');
 
 Route::delete('/users/{user}','UsersAPIController@delete');
+
+Route::get('/users/{user}/deactivate','UsersAPIController@ban');
+Route::get('/users/{user}/activate','UsersAPIController@unban');

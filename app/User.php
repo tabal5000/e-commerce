@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password','surname','phone_number','address'
+        'name', 'email', 'password','surname','phone_number','address','active',
     ];
 
     public function roles() {
@@ -77,7 +77,13 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
-    public function getFullName() {
-      return $this->name . ' ' . $this->surname;
+    // this is a recommended way to declare event handlers
+    protected static function boot() {
+        parent::boot();
+
+        static::deleting(function($user) { // before delete() method call this
+             $user->roles()->detach();
+             // do the rest of the cleanup...
+        });
     }
 }

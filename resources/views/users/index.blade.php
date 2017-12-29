@@ -14,7 +14,7 @@
                     <th>#</th>
                     <th>Name</th>
                     <th>Email</th>
-                    <th>Role</th>
+                    <th>Active</th>
                     <th></th>
                 </tr>
             </thead>
@@ -29,7 +29,7 @@
                     <td>{{ $n }}</td>
                     <td>{{ $user->name }} {{$user->surname}}</td>
                     <td>{{ $user->email }}</td>
-                    <td> <?php echo $user->staff == 1 ? 'Staff' : 'Customer'; ?> </td>
+                    <td> <?php echo $user->active == 1 ? 'Active' : 'Disabled'; ?> </td>
                     <td>
                       <div class="dropdown">
                         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
@@ -38,7 +38,7 @@
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                           <li>
-                            <a id="editUserBtn" href="/users/{{ $user->id }}/">
+                            <a id="editUserBtn" href="/users/{{ $user->id }}">
                               @fa('address-card', ['class' => 'faIcons']) User details
                             </a>
                           </li>
@@ -47,6 +47,19 @@
                               @fa('edit', ['class' => 'faIcons']) Edit
                             </a>
                           </li>
+                          @if($user->active == 1)
+                            <li>
+                              <a id="editUserBtn" href="/users/{{ $user->id }}/deactivate">
+                                @fa('ban', ['class' => 'faIcons']) Deactivate
+                              </a>
+                            </li>
+                          @else
+                            <li>
+                              <a id="editUserBtn" href="/users/{{ $user->id }}/activate">
+                                @fa('check', ['class' => 'faIcons']) Activate
+                              </a>
+                            </li>
+                          @endif
 
                           <!-- Try this one if the other one does not work. -->
 

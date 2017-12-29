@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Auth;
 use Illuminate\Http\Request;
 
 class SessionsController extends Controller
@@ -16,7 +16,8 @@ class SessionsController extends Controller
     }
 
     public function store() {
-      if(!auth()->attempt(request(['email','password']))) {
+      $data = request()->all();
+      if (!Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'active' => 1])) {
         return back()->withErrors([
           'message' => 'Please check your credentials and try again.'
         ]);
