@@ -20,6 +20,11 @@
             <!-- Left Side Of Navbar -->
             <ul class="nav navbar-nav">
                 &nbsp;
+                @auth
+                  @if(auth()->user()->hasAnyRole(['admin','staff']))
+                      <li><a href="/users">Dashboard</a></li>
+                  @endif
+                @endauth
             </ul>
 
             <!-- Right Side Of Navbar -->
@@ -35,6 +40,11 @@
                         </a>
 
                         <ul class="dropdown-menu">
+                            <li>
+                                <a href="/users/{{Auth::user()->id}}">
+                                    User Settings
+                                </a>
+                            </li>
                             <li>
                                 <a href="/logout"
                                     onclick="event.preventDefault();

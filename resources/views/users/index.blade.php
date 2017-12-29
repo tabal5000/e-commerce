@@ -4,7 +4,7 @@
 
 <div class="col-lg-10 col-lg-offset-1">
 
-    <h1><i class="fa fa-users"></i> User Administration </h1>
+    <h1>@fa('users',['class' => 'faIcons']) User Administration </h1>
 
     <div class="table-responsive">
         <table class="table table-striped table-hover table-condensed table-responsive">
@@ -37,11 +37,6 @@
                           <span class="caret"></span>
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                          <li>
-                            <a id="editUserBtn" href="/users/{{ $user->id }}">
-                              @fa('address-card', ['class' => 'faIcons']) User details
-                            </a>
-                          </li>
                           <li>
                             <a id="editUserBtn" href="/users/{{ $user->id }}/edit">
                               @fa('edit', ['class' => 'faIcons']) Edit

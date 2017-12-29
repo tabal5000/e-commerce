@@ -34,6 +34,7 @@ Route::delete('/items/{item}', 'ItemsAPIController@delete');
 
 Route::get('/users','UsersAPIController@index');
 
+Route::get('/users/{user}','UsersAPIController@show');
 
 Route::post('/users', 'UsersAPIController@store');
 
