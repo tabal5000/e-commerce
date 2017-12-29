@@ -33,3 +33,6 @@ Route::post('/logout','SessionsController@destroy');
 
 
 Route::resource('users','UsersController');
+
+Route::get('/users/{user}/deactivate','UsersController@ban');
+Route::get('/users/{user}/activate','UsersController@unban');
