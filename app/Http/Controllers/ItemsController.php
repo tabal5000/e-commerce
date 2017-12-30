@@ -22,7 +22,7 @@ class ItemsController extends Controller
     public function show($id) {
         $request = Request::create('/api/items/' . $id , 'GET');
         $item = Route::dispatch($request)->getData();
-    	return view('items/show',compact('item'));
+    	return view('items/show1',compact('item'));
     }
 
     public function create() {

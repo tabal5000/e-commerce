@@ -34,3 +34,30 @@ input[type="number"] {
 #delUserForm:hover {
   background-color: #f5f5f5;
 }
+
+.itemLeft {
+  border-right: 1px solid #333;
+}
+
+.itemHeaders {
+  margin-right: 15px;
+}
+
+#addToCartBtn {
+  position:absolute;
+  bottom:0;
+  right:0;
+}
+
+
+#itemBody {
+  position:relative;
+}
+
+#itemDescription {
+  letter-spacing: 1px;
+  /* line-height: 20px; */
+  margin-top: 15px;
+  margin-right: 25px;
+  text-align: justify;
+}
