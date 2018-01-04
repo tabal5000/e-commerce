@@ -44,9 +44,17 @@ input[type="number"] {
 }
 
 #addToCartBtn {
-  position:absolute;
-  bottom:0;
-  right:0;
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  padding-right: 25px;
+  font-size: 20px;
+}
+
+img.resize {
+  max-width:268px;
+  max-height:268px;
 }
 
 
