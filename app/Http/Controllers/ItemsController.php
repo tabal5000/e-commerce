@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Route;
 use App\Item;
+use App\Cart;
+use Session;
 
 class ItemsController extends Controller
 {
@@ -22,7 +24,7 @@ class ItemsController extends Controller
     public function show($id) {
         $request = Request::create('/api/items/' . $id , 'GET');
         $item = Route::dispatch($request)->getData();
-    	return view('items/show1',compact('item'));
+    	return view('items/show',compact('item'));
     }
 
     public function create() {
@@ -47,5 +49,17 @@ class ItemsController extends Controller
         $request = Request::create('/api/items','POST', $data);
         $response = Route::dispatch($request);
         return redirect('/');
+    }
+
+    public function addToCart(Request $request, $id) {
+      $request = Request::create('/api/items/' . $id , 'GET');
+      $item = Route::dispatch($request)->getData();
+
+      $oldCart = Session::has('cart') ? Session::get('cart') : null;
+      $cart = new Cart($oldCart);
+      $cart->add($item,$item->id);
+
+      Session::put('cart',$cart);
+      return redirect()->back();
     }
 }

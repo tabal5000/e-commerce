@@ -6,8 +6,7 @@
 
     <h1>@fa('users',['class' => 'faIcons']) User Administration </h1>
 
-    <div class="table-responsive">
-        <table class="table table-striped table-hover table-condensed table-responsive">
+        <table class="table">
 
             <thead class="thead-inverse">
                 <tr>
@@ -89,7 +88,6 @@
             </tbody>
 
         </table>
-    </div>
 </div>
 
 @endsection

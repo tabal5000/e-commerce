@@ -26,5 +26,6 @@
     </div>
 
     <script src="/js/app.js"></script>
+    <script src="/js/item.js"></script>
 </body>
 </html>
