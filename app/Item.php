@@ -10,8 +10,4 @@ class Item extends Model
     protected $fillable =
         ['title','description','price','img_url'
     ];
-
-    public function inStock() {
-      return true;
-    }
 }

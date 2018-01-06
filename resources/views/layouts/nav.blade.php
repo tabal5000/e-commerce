@@ -29,6 +29,18 @@
 
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
+              @auth
+                @if(auth()->user()->hasAnyRole(['customer']))
+                    <li>
+                      <a href="/shopping-cart">
+                        @fa('shopping-cart',['class' => '']) Shopping Cart
+                        @if (Session::has('cart'))
+                          <span class="badge"> {{ Session::has('cart') ? Session::get('cart')->totalQty : '' }} </span>
+                        @endif
+                      </a>
+                    </li>
+                @endif
+              @endauth
                 <!-- Authentication Links -->
                 @guest
                     <li><a href="/login">Login</a></li>
@@ -41,8 +53,8 @@
 
                         <ul class="dropdown-menu">
                             <li>
-                                <a href="/users/{{Auth::user()->id}}">
-                                    User Settings
+                                <a href="/users/settings">
+                                    Change user settings
                                 </a>
                             </li>
                             <li>

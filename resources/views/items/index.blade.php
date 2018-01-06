@@ -3,132 +3,21 @@
 @section('content')
 <div class="panel panel-default">
   <div class="panel panel-body">
-    <!-- <ul>
-        @foreach ($items as $item)
-            <li>
-              <a href="/items/{{$item->id}}"> {{ $item->title }} </a>
-            </li>
+      <div class="row">
+        @foreach($items as $item)
+        <div class="col-xs-6 col-sm-4 col-md-3 itemEl">
+          <a href="/items/{{$item->id}}">
+          <div>
+            <img src="{{$item->img}}" class="img-responsive resize itemImg">
+              <div>
+                <h4 class="itemTitle"> {{$item->title}} </h4>
+              </div>
+          </div>
+          </a>
+        </div>
         @endforeach
-    </ul> -->
-    <div class="row">
 
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
       </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <a href="#"> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-    </div>
-
-    <div class="row">
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-      <div class="col-md-3 col-sm-6">
-        <div class="thumbnail">
-          <img src="/storage/images/svetlo.png" class="img-responsive resize">
-            <div class="caption">
-              <h4> Application! </h4>
-            </div>
-        </div>
-      </div>
-
-    </div>
   </div>
 </div>
 @endsection

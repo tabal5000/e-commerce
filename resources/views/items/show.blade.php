@@ -3,24 +3,41 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                  <h1 class="authHeaders"> {{ $item->title }} </h1>
-                </div>
 
-                <div class="panel-body">
+        <div class="row">
 
+          <div class="col-md-11 col-md-offset-1">
+              <div class="panel panel-default">
 
-                  <h7> {{ $item->id }} </h4>
-                  <h4> {{ $item->description }} </h4>
-                  <h7> {{ $item->price }}</h4>
+                  <div class="panel-body" id="itemBody">
 
-                </div>
-            </div>
+                    <div class="col-md-4">
+                        <img class="img-responsive center-block showItemImg" src="{{$item->img}}" alt="">
+                    </div>
+
+                    <div class="col-md-8">
+                            <div class="caption-full row">
+                                <h1 class="pull-left"> {{$item->title}}
+                            </div>
+                            <div class="row">
+                              <p id="itemDescription"> {{$item->description}} </p>
+                            </div>
+                            <div class="row">
+                              <h1>{{$item->price}}€</h1>
+                            </div>
+                            <div class="row">
+                              <a href="/addToCart/{{$item->id}}"class="btn btn-success" id="addToCartBtn">Add to Cart</a>
+                            </div>
+                    </div>
+
+                  </div>
+
+              </div>
+
+          </div>
+
         </div>
-    </div>
+
 </div>
 
 @endsection
