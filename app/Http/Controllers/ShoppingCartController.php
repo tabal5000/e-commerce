@@ -9,6 +9,11 @@ use Session;
 
 class ShoppingCartController extends Controller
 {
+
+    public function __construct() {
+      $this->middleware('auth');
+    }
+
     public function addToCart(Request $request, $id) {
       $request = Request::create('/api/items/' . $id , 'GET');
       $item = Route::dispatch($request)->getData();

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use App\Role;
 
 class UsersAPIController extends Controller
 {
@@ -32,7 +33,11 @@ class UsersAPIController extends Controller
 
     public function store(Request $data)
     {
-        $user =  User::create([
+
+        $role_customer = Role::where('name','customer')->first();
+        $role_staff = Role::where('name','staff')->first();
+
+        $newUser =  User::create([
           'name' => $data['name'],
           'surname' => $data['surname'],
           'address' => $data['address'],
@@ -41,13 +46,16 @@ class UsersAPIController extends Controller
           'password' => bcrypt($data['password']),
         ]);
 
-        $user
-            ->roles()
-            ->attach(App\Role::where('name','customer')->first());
+        $user = request()->user();
 
-        //dd($user);
-
-        return response()->json($user, 201);
+        if($user) {
+          if($user->isAdmin()) {
+            $newUser->roles()->attach($role_staff);
+          }
+        } else {
+          $newUser->roles()->attach($role_customer);
+        }
+        return response()->json($newUser, 201);
     }
 
     public function update(Request $request,User $user)

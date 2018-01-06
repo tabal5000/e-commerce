@@ -30,7 +30,6 @@
             <!-- Right Side Of Navbar -->
             <ul class="nav navbar-nav navbar-right">
               @auth
-                @if(auth()->user()->hasAnyRole(['customer']))
                     <li>
                       <a href="/shopping-cart">
                         @fa('shopping-cart',['class' => '']) Shopping Cart
@@ -39,7 +38,6 @@
                         @endif
                       </a>
                     </li>
-                @endif
               @endauth
                 <!-- Authentication Links -->
                 @guest
