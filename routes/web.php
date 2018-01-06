@@ -39,6 +39,8 @@ Route::resource('/login','SessionsController', [
 Route::post('/logout','SessionsController@destroy');
 
 Route::get('/users/settings','UsersController@changeSettings');
+Route::get('/createAccount', 'UsersController@showNewAccount');
+Route::post('/createAccount', 'UsersController@createNewAccount');
 Route::resource('users','UsersController');
 
 

@@ -26,6 +26,28 @@ class UsersController extends Controller
       return view('users/edit',compact('user'));
   }
 
+  public function showNewAccount() {
+      return view('users/createAccount');
+  }
+
+  public function createNewAccount() {
+    $user = request()->user();
+    $user->authorizeRoles(['staff','admin']);
+    $this->validate(request(), [
+      'name' => 'required|string|max:255',
+      'surname' => 'required|string|max:255',
+      'address' => 'required|string|max:255',
+      'phone_number' => 'required|string|max:255',
+      'email' => 'required|string|email|max:255|unique:users,email,',
+      'password' => 'required|string|min:4|confirmed',
+    ]);
+
+    $data = request()->all();
+    $request = Request::create('/api/users','POST', $data);
+    $newUser = Route::dispatch($request)->original;
+    return redirect('/users');
+  }
+
   public function changeSettings() {
     $user = Auth::user();
     return view('users/edit',compact('user'));
@@ -42,7 +64,7 @@ class UsersController extends Controller
     ]);
     $request = Request::create('/api/users/' . $user->id , 'PUT', [$user]);
     $response = Route::dispatch($request);
-    return redirect()->back();
+    return redirect('/home');
   }
 
 
