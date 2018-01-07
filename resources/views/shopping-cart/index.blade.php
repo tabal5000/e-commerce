@@ -32,7 +32,7 @@
                         <td>{{ $item['qty'] }} </td>
                         <td>
                           <div class="btn-group">
-                            <button type="button" class="btn btn-primary btn-xs dropdown-toogle" data-toggle="dropdown">Action <span class="caret"></span></button>
+                            <button type="button" class="btn btn-primary dropdown-toogle" data-toggle="dropdown">Action <span class="caret"></span></button>
                             <ul class="dropdown-menu">
                                 <li><a href="/addToCart/{{$key}}">Increase by one</a></li>
                                 <li><a href="/reduce/{{$key}}">Reduce by 1</a></li>

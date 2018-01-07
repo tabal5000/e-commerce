@@ -22,12 +22,18 @@ Route::resource('/register','RegistrationController', [
 
 Route::resource('/items','ItemsController');
 
+Route::get('/orders','OrdersController@index');
+Route::get('/orders/{order}/accept','OrdersController@acceptOrder');
+Route::get('/orders/{order}/reject','OrdersController@rejectOrder');
+Route::delete('/orders/{order}','OrdersController@deleteOrder');
+
 
 Route::get('/addToCart/{id}','ShoppingCartController@addToCart');
 Route::get('/reduce/{id}','ShoppingCartController@getReduceByOne');
 Route::get('/remove/{id}','ShoppingCartController@getRemoveItem');
 Route::get('/shopping-cart','ShoppingCartController@getCart');
 Route::get('/checkout','ShoppingCartController@getCheckout');
+Route::post('/checkout','ShoppingCartController@postCheckout');
 
 Route::resource('/login','SessionsController', [
   'names' => [

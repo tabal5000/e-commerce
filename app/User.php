@@ -24,6 +24,10 @@ class User extends Authenticatable
       return $this->belongsToMany(Role::class);
     }
 
+    public function orders() {
+      return $this->hasMany('App\Order');
+    }
+
     public function isAdmin() {
       return $this->hasRole('admin'); // ?? something like this! should return true or false
     }
