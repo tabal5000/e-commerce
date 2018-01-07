@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Route;
 use App\Cart;
+use App\Order;
+use Auth;
 use Session;
 
 class ShoppingCartController extends Controller
@@ -64,8 +66,18 @@ class ShoppingCartController extends Controller
         return view('shopping-cart/index', ['items' => null]);
       }
       $oldCart = Session::get('cart');
-      $cart = new cart($oldCart);
+      $cart = new Cart($oldCart);
       $total = $cart->totalPrice;
       return view('shopping-cart/checkout', ['total' => $total]);
+    }
+
+    public function postCheckout() {
+      if(!Session::has('cart')){
+        return view('shopping-cart/index', ['items' => null]);
+      }
+      $request = Request::create('/api/checkout','POST');
+      $order = Route::dispatch($request);
+      Session::forget('cart');
+      return redirect('/items')->with('status','Successfully purchased some beer!');
     }
 }

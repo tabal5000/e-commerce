@@ -44,3 +44,10 @@ Route::delete('/users/{user}','UsersAPIController@delete');
 
 Route::get('/users/{user}/deactivate','UsersAPIController@ban');
 Route::get('/users/{user}/activate','UsersAPIController@unban');
+
+Route::post('/checkout','ShoppingCartAPIController@storeOrder');
+
+Route::get('/orders','OrdersAPIController@index');
+Route::get('/orders/{order}/accept','OrdersAPIController@acceptOrder');
+Route::get('/orders/{order}/reject','OrdersAPIController@rejectOrder');
+Route::delete('/orders/{order}','OrdersAPIController@deleteOrder');

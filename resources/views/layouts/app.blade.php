@@ -26,6 +26,6 @@
     </div>
 
     <script src="/js/app.js"></script>
-    <script src="/js/item.js"></script>
+    <script src="/js/helper.js"></script>
 </body>
 </html>

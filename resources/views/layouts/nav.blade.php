@@ -23,6 +23,7 @@
                 @auth
                   @if(auth()->user()->hasAnyRole(['admin','staff']))
                       <li><a href="/users">Dashboard</a></li>
+                      <li><a href="/orders">Orders</a></li>
                   @endif
                 @endauth
             </ul>
