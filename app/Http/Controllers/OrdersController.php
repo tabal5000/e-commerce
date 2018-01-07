@@ -7,6 +7,7 @@ use \Illuminate\Support\Facades\Route;
 use App\Cart;
 use App\Order;
 use Session;
+use Auth;
 
 class OrdersController extends Controller
 {
@@ -41,5 +42,12 @@ class OrdersController extends Controller
     $request = Request::create('/api/orders/' . $order->id ,'DELETE');
     $orders = Route::dispatch($request)->getData();
     return redirect('/orders');
+  }
+
+  public function userOrders() {
+    $user = Auth::user();
+    $request = Request::create('/api/myOrders','GET');
+    $orders = Route::dispatch($request)->getData();
+    return view('orders/userOrders',compact('orders'));
   }
 }

@@ -26,6 +26,7 @@ Route::get('/orders','OrdersController@index');
 Route::get('/orders/{order}/accept','OrdersController@acceptOrder');
 Route::get('/orders/{order}/reject','OrdersController@rejectOrder');
 Route::delete('/orders/{order}','OrdersController@deleteOrder');
+Route::get('/myOrders','OrdersController@userOrders');
 
 
 Route::get('/addToCart/{id}','ShoppingCartController@addToCart');

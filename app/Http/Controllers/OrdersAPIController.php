@@ -47,4 +47,18 @@ class OrdersAPIController extends Controller
     return response()->json(null, 204);
   }
 
+  public function userOrders() {
+    $user = request()->user();
+    $newOrders = [];
+    $newOrder = [];
+    $orders = $user->orders()->get();
+    foreach($orders as $order){
+      $newOrder = $order;
+      $newOrder->user_id = $order->user;
+      $newOrder->cart = unserialize($order->cart);
+      array_push($newOrders,$newOrder);
+    }
+    return response()->json($newOrders,200);
+  }
+
 }

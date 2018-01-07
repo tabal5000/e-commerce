@@ -51,3 +51,4 @@ Route::get('/orders','OrdersAPIController@index');
 Route::get('/orders/{order}/accept','OrdersAPIController@acceptOrder');
 Route::get('/orders/{order}/reject','OrdersAPIController@rejectOrder');
 Route::delete('/orders/{order}','OrdersAPIController@deleteOrder');
+Route::get('/myOrders','OrdersAPIController@userOrders');

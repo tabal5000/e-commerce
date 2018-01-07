@@ -12,6 +12,10 @@ input[type="number"] {
   max-height: 600px;
 }
 
+.panelMargin {
+  margin-bottom: 50px !important;
+}
+
 table {
   font-size: 120%;
 }
@@ -76,6 +80,14 @@ table .btn {
 }
 
 #addToCartBtn {
+  margin-top: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 25px;
+  font-size: 20px;
+}
+
+.itemOptionsButton {
   margin-top: 15px;
   padding-top: 10px;
   padding-bottom: 10px;
