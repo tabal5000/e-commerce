@@ -25,7 +25,8 @@ class RegistrationController extends Controller
         'address' => 'required|string|max:255',
         'phone_number' => 'required|string|max:255',
         'email' => 'required|string|email|max:255|unique:users',
-        'password' => 'required|string|min:4|confirmed'
+        'password' => 'required|string|min:4|confirmed',
+        'g-recaptcha-response' => 'required|captcha'
       ]);
 
       $data = request()->all();

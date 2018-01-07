@@ -28,10 +28,36 @@ class ItemsController extends Controller
     }
 
     public function create() {
+        $user = request()->user();
+        $user->authorizeRoles(['staff','admin']);
         return view('items/create');
     }
 
+    public function edit(Item $item) {
+        return view('items/edit',compact('item'));
+    }
+
+    public function destroy(Item $item) {
+      $request = Request::create('/api/items/' . $item->id , 'DELETE');
+      $response = Route::dispatch($request);
+      return redirect('/home');
+    }
+
+    public function update(Item $item) {
+      $this->validate(request(), [
+          'title' => 'required',
+          'price' => 'required',
+          'description' => 'required',
+          'img' => 'required'
+      ]);
+      $request = Request::create('/api/items/' . $item->id , 'PUT', [$item]);
+      $response = Route::dispatch($request);
+      return redirect('/home');
+    }
+
     public function store() {
+        $user = request()->user();
+        $user->authorizeRoles(['staff','admin']);
         // dd(request()->all());
         // $post = new Post;
         // $post->title = request('title');
@@ -41,14 +67,13 @@ class ItemsController extends Controller
         $this->validate(request(), [
             'title' => 'required',
             'price' => 'required',
-            'stock' => 'required',
             'description' => 'required',
-            'img_url' => 'required'
+            'img' => 'required'
         ]);
         $data = request()->all();
         $request = Request::create('/api/items','POST', $data);
         $response = Route::dispatch($request);
-        return redirect('/');
+        return redirect('/home');
     }
 
     public function addToCart(Request $request, $id) {

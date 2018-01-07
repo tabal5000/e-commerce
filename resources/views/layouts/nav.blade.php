@@ -24,6 +24,10 @@
                   @if(auth()->user()->hasAnyRole(['admin','staff']))
                       <li><a href="/users">Dashboard</a></li>
                       <li><a href="/orders">Orders</a></li>
+                      <li><a href="/items/create">Add product</a></li>
+                  @endif
+                  @if(auth()->user()->hasAnyRole(['customer']))
+                      <li><a href="/myOrders">My Orders</a></li>
                   @endif
                 @endauth
             </ul>
@@ -33,7 +37,7 @@
               @auth
                     <li>
                       <a href="/shopping-cart">
-                        @fa('shopping-cart',['class' => '']) Shopping Cart
+                        @fa('shopping-cart',['class' => 'faIcons']) Shopping Cart
                         @if (Session::has('cart'))
                           <span class="badge"> {{ Session::has('cart') ? Session::get('cart')->totalQty : '' }} </span>
                         @endif

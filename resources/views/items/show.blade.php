@@ -26,8 +26,24 @@
                               <h1>{{$item->price}}€</h1>
                             </div>
                             <div class="row">
+                              <div class="col-md-3">
                               <a href="/addToCart/{{$item->id}}"class="btn btn-success" id="addToCartBtn">Add to Cart</a>
-                            </div>
+                              </div>
+                            @auth
+                              @if(auth()->user()->hasAnyRole(['admin','staff']))
+                              <div class="col-md-3">
+                                <a href="/items/{{$item->id}}/edit"class="btn btn-info" id="addToCartBtn">Edit item</a>
+                              </div>
+                              <div class="col-md-3">
+                                {{ Form::open(['url' => '/items/' . $item->id, 'method' => 'DELETE']) }}
+                                  <button type="submit" class="btn btn-danger" id="addToCartBtn">
+                                    Delete
+                                  </button>
+
+                                {{ Form::close() }}
+                              </div>
+                              @endif
+                            @endauth
                     </div>
 
                   </div>

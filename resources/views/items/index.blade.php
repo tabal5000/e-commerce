@@ -1,7 +1,7 @@
 @extends('layouts/app')
 
 @section('content')
-<div class="panel panel-default">
+<div class="panel panel-default panelMargin">
   <div class="panel panel-body">
     @if (session('status'))
       <div class="row">
