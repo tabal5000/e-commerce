@@ -20,11 +20,11 @@ class UsersTableSeeder extends Seeder
       $role_staff = Role::where('name','staff')->first();
       $role_customer = Role::where('name','customer')->first();
 
-      // $first_order = Order::where('id','1')->first();
-      // $second_order = Order::where('id','2')->first();
-      // $third_order = Order::where('id','3')->first();
-      // $fouth_order = Order::where('id','4')->first();
-      // $fifth_order = Order::where('id','5')->first();
+      $first_order = Order::where('id','1')->first();
+      $second_order = Order::where('id','2')->first();
+      $third_order = Order::where('id','3')->first();
+      $fouth_order = Order::where('id','4')->first();
+      $fifth_order = Order::where('id','5')->first();
       $faker = \Faker\Factory::create();
       // User::create([
       //     'email' => 'admin@ep.si',
@@ -36,6 +36,7 @@ class UsersTableSeeder extends Seeder
       //     'address' => 'Ulica bratov Rozman 4',
       //     'phone_number' => '051335754',
       // ]);
+
 
       $admin = new User();
       $admin->name = 'Admin';
@@ -76,8 +77,8 @@ class UsersTableSeeder extends Seeder
       $customer->password = bcrypt('pass');
       $customer->save();
       $customer->roles()->attach($role_customer);
-      #$customer->orders()->save($first_order);
-      #$customer->orders()->save($second_order);
+      $customer->orders()->save($first_order);
+      $customer->orders()->save($second_order);
 
       $customer = new User();
       $customer->name = 'Lisette';
@@ -88,8 +89,8 @@ class UsersTableSeeder extends Seeder
       $customer->password = bcrypt('pass');
       $customer->save();
       $customer->roles()->attach($role_customer);
-      #$customer->orders()->save($third_order);
-      #$customer->orders()->save($fouth_order);
+      $customer->orders()->save($third_order);
+      $customer->orders()->save($fouth_order);
 
       $customer = new User();
       $customer->name = 'Gerard';
@@ -100,7 +101,7 @@ class UsersTableSeeder extends Seeder
       $customer->password = bcrypt('pass');
       $customer->save();
       $customer->roles()->attach($role_customer);
-      #$customer->orders()->save($fifth_order);
+      $customer->orders()->save($fifth_order);
 
       for ($i = 0; $i < 10; $i++) {
           $user = User::create([
