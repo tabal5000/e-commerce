@@ -25,7 +25,7 @@ class ItemsTableSeeder extends Seeder
         Item::create([
             'title' => 'Laško Zlatorog Dark',
             'description' => 'Laško Zlatorog dark Laško Zlatorog dark offers a characteristic aroma from the original 1941 recipe. Lighter in alcohol content and richer with a shade of charamel malt this beer remains within the boundaries of well known drinking routine. Unique taste and top quality mix great with lighter Zlatorog beer. Discover the dark side of the legendary Slovenian beer.',
-            'price' => 1.09,
+            'price' => 1.11,
             'img' => '/storage/images/temno.png',
         ]);
 
@@ -53,50 +53,50 @@ class ItemsTableSeeder extends Seeder
         Item::create([
             'title' => 'Laško Special',
             'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
+            'price' => 2.00,
             'img' => '/storage/images/special.png',
         ]);
 
         Item::create([
             'title' => 'Heineken Lager Beer',
             'description' => "It's a generic European lager that's been around forever. Great at weddings, picnics, and sporting events when it is being compared to domestic light beer.",
-            'price' => 1.09,
-            'img' => 'http://i.imgur.com/RZaSkek.jpg',
-        ]);
-
-        Item::create([
-            'title' => 'Weqqik Beer',
-            'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
-            'img' => 'http://i.imgur.com/We5qqik.jpg',
+            'price' => 0.50,
+            'img' => '/storage/images/heineken.png',
         ]);
 
         Item::create([
             'title' => 'Bavaria Premium',
             'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
-            'img' => 'http://www.bavaria.com/sites/default/files/Bavaria-premium-beer-bottle-33cl-%28drops%29_300dpi_297x420mm_K_11.png',
+            'price' => 1.03,
+            'img' => '/storage/images/bavaria.png',
         ]);
 
         Item::create([
-            'title' => 'Encrypted Beer',
-            'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
-            'img' => 'http://asset1.marksandspencer.com/is/image/mands/SD_FD_F23A_00360500_NC_X_EC_0',
+            'title' => 'Desparados Tequilla',
+            'description' => 'Desperados is a pale lager beer with 5.9% alcohol by volume originally produced by the French brewing company Fischer Brewery, now produced by Karlovačko Brewery.',
+            'price' => 4.99,
+            'img' => '/storage/images/desparados.png',
         ]);
 
         Item::create([
-            'title' => 'SomeBeer Lagerish Beerio',
-            'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
-            'img' => 'http://www.drinkshop.co.nz/wp-content/uploads/2010/07/file_111_8.jpg',
+            'title' => 'Bear Beer Special',
+            'description' => 'Special Bear Beer beer. Combines classic sophistication with chic trendsetting.Great at weddings, picnics, and sporting events when it is being compared to domestic light beer.',
+            'price' => 2.50,
+            'img' => '/storage/images/bearbeer.png',
         ]);
 
         Item::create([
-            'title' => 'Duff Beer',
-            'description' => 'Laško Special combines classic sophistication with chic trendsetting. On the one hand, the designation “traditionally brewed” is about reviving tried and tested names in new versions, and on the other, “new tradition” suggests fresh recipes. History is embodied in a noble red, and the future in an elegant silver neck label.',
-            'price' => 1.09,
-            'img' => 'https://279173f3.nuajik.io/589-large_default/duff-beer-bottle.jpg',
+            'title' => 'Chang',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'price' => 0.99,
+            'img' => '/storage/images/chang.png',
+        ]);
+
+        Item::create([
+            'title' => 'KingFisher',
+            'description' => 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.',
+            'price' => 0.33,
+            'img' => '/storage/images/kingfisher.png',
         ]);
         // for ($i = 0; $i < 10; $i++) {
         //     Item::create([
