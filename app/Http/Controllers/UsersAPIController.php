@@ -44,6 +44,7 @@ class UsersAPIController extends Controller
           'phone_number' => $data['phone_number'],
           'email' => $data['email'],
           'password' => bcrypt($data['password']),
+          'email_token' => base64_encode($data['email'])
         ]);
 
         $user = request()->user();

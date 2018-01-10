@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use \Illuminate\Support\Facades\Route;
 use App\User;
 
+use Illuminate\Auth\Events\Registered;
+use App\Jobs\SendVerificationEmail;
+
 class RegistrationController extends Controller
 {
 
@@ -28,12 +31,19 @@ class RegistrationController extends Controller
         'password' => 'required|string|min:4|confirmed',
         'g-recaptcha-response' => 'required|captcha'
       ]);
-
       $data = request()->all();
       $request = Request::create('/api/users','POST', $data);
       $user = Route::dispatch($request)->original;
-      auth()->login($user);
-
-      return redirect()->route('home');
+      dispatch(new SendVerificationEmail($user));
+      return view('email/verification');
+      
     }
+
+    public function verify($token){
+      $user = User::where('email_token',$token)->first();
+      $user->verified = 1;
+      if($user->save()){
+      return view('email/confirm',['user'=>$user]);
+    }
+  }
 }

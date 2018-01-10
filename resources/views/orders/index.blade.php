@@ -101,9 +101,9 @@
                                         <tr>
                                             <td>{{ $n2 }}</td>
                                             <td>{{ $item->item->title }} </td>
-                                            <td>{{ $item->item->price }}</td>
+                                            <td>{{ $item->item->price }}€</td>
                                             <td>{{ $item->qty }} </td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>{{ $item->price }}€</td>
 
                                         </tr>
                                         @php
