@@ -31,7 +31,7 @@
                   <td>{{$order->user_id->name}}</td>
                   <td>{{$order->user_id->surname}}</td>
                   <td>{{$order->user_id->address}}</td>
-                  <td>{{$order->cart->totalPrice}}</td>
+                  <td>{{$order->cart->totalPrice}}€</td>
                   <td><?php echo $order->processed == 1 ? 'True' : 'False'; ?></td>
                   <td>
                     <div class="btn-group">
@@ -77,9 +77,9 @@
                                         <tr>
                                             <td>{{ $n2 }}</td>
                                             <td>{{ $item->item->title }} </td>
-                                            <td>{{ $item->item->price }}</td>
+                                            <td>{{ $item->item->price }}€</td>
                                             <td>{{ $item->qty }} </td>
-                                            <td>{{ $item->price }}</td>
+                                            <td>{{ $item->price }}€</td>
 
                                         </tr>
                                         @php

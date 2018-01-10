@@ -28,7 +28,7 @@
                     <tr>
                         <td>{{ $n }}</td>
                         <td>{{ $item['item']->title }} </td>
-                        <td>{{ $item['price'] }}</td>
+                        <td>{{ $item['price'] }}€</td>
                         <td>{{ $item['qty'] }} </td>
                         <td>
                           <div class="btn-group">
@@ -53,7 +53,7 @@
 
     <div class="row">
       <div class="col-sm-6 col-md-6 col-md-offset-8 col-sm-offset-8">
-        <h3> <strong> Total Price: {{$totalPrice}}</strong> </h3>
+        <h3> <strong> Total Price: {{$totalPrice}}€</strong> </h3>
       </div>
     </div>
     <hr>
