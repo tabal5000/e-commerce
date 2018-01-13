@@ -19,7 +19,7 @@ class SessionsController extends Controller
       $data = request()->all();
       if (!Auth::attempt(['email' => $data['email'], 'password' => $data['password'], 'active' => 1,'verified' => 1])) {
         return back()->withErrors([
-          'message' => 'Please check your credentials and try again.'
+          'message' => 'Please check your credentials and try again.' 
         ]);
       }
       return redirect()->back();
