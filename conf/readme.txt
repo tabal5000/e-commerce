@@ -28,6 +28,7 @@ php artisan migrate:refresh --seed
 sudo mv conf/sites-available/*.conf /etc/apache2/sites-available/
 sudo a2enmod ssl
 sudo a2enmod rewrite
+sudo a2dissite 000-default.conf
 sudo a2ensite laravel.conf
 sudo a2ensite laravel-ssl.conf
 sudo service apache2 restart
