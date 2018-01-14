@@ -7,7 +7,6 @@ sudo apt-get update
 sudo apt-get upgrade
 sudo apt-get install php7.1 php7.1-mcrypt php7.1-xml php7.1-gd php7.1-opcache php7.1-mbstring php7.1-ext-curl php7.1-mysql php7.1-curl
 
-
 sudo apt install git
 cd NetBeansProjects/
 git clone https://github.com/tabal5000/e-commerce.git
@@ -19,6 +18,18 @@ php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
 composer update
 
+mysql -u root -p
+ep
+CREATE DATABASE shop;
+exit
+
+php artisan migrate:refresh --seed
+
+sudo mv conf/sites-available/*.conf /etc/apache2/sites-available/
+sudo a2enmod ssl
+sudo a2ensite laravel.conf
+sudo a2ensite laravel-ssl.conf
+sudo service apache2 restart
 ######################################
 Geslo za uvoz certifikatov: ep
 ######################################
