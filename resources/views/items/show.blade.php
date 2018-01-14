@@ -12,7 +12,7 @@
                   <div class="panel-body" id="itemBody">
 
                     <div class="col-md-4">
-                        <img class="img-responsive center-block showItemImg" src="{{$item->img}}" alt="">
+                        <img class="img-responsive center-block showItemImg" src="/storage/{{$item->img}}" alt="">
                     </div>
 
                     <div class="col-md-8">

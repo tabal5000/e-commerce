@@ -3,12 +3,15 @@
         Options -MultiViews -Indexes
     </IfModule>
 
-    RewriteEngine On
+    RewriteEngine on
+
+    RewriteCond %{HTTPS} off
+    RewriteRule ^(login|register|checkout) https://%{HTTP_HOST}%{REQUEST_URI} [R=301,L]
 
     # Handle Authorization Header
     RewriteCond %{HTTP:Authorization} .
     RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
-    
+
     # Redirect Trailing Slashes If Not A Folder...
     RewriteCond %{REQUEST_FILENAME} !-d
     RewriteCond %{REQUEST_URI} (.+)/$
