@@ -30,8 +30,14 @@ class ItemsAPIController extends Controller
         $url = $request->img;
         $contents = file_get_contents($url);
         $name = substr($url, strrpos($url, '/') + 1);
-        Storage::put($name, $contents);
-        $item = Item::create($request->all());
+        $path = 'public/' . $name;
+        Storage::put($path, $contents);
+        $item = Item::create([
+          'title' => $request['title'],
+          'description' => $request['description'],
+          'price' => $request['price'],
+          'img' => $name,
+        ]);
         return response()->json($item, 201);
     }
 
@@ -40,7 +46,9 @@ class ItemsAPIController extends Controller
         $url = $request->img;
         $contents = file_get_contents($url);
         $name = substr($url, strrpos($url, '/') + 1);
-        Storage::put($name, $contents);
+        $path = 'public/' . $name;
+        Storage::put($path, $contents);
+        $request['img'] = $name;
         $item->update($request->all());
         return response()->json($item, 200);
     }
