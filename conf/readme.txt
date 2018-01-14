@@ -5,7 +5,7 @@ Ubuntu Virtualki, uporabljena na vajah:
 sudo add-apt-repository ppa:ondrej/php
 sudo apt-get update
 sudo apt-get upgrade
-sudo apt-get install php7.1 php7.1-mcrypt php7.1-xml php7.1-gd php7.1-opcache php7.1-mbstring php7.1-ext-curl php7.1-mysql php7.1-curl
+sudo apt-get install php7.1 php7.1-mcrypt php7.1-xml php7.1-gd php7.1-opcache php7.1-mbstring php7.1-ext-curl php7.1-mysql php7.1-curl curl libcurl3 libcurl3-dev php7.0-curl php-curl
 
 sudo apt install git
 cd NetBeansProjects/
@@ -27,9 +27,17 @@ php artisan migrate:refresh --seed
 
 sudo mv conf/sites-available/*.conf /etc/apache2/sites-available/
 sudo a2enmod ssl
+sudo a2enmod rewrite
 sudo a2ensite laravel.conf
 sudo a2ensite laravel-ssl.conf
 sudo service apache2 restart
+sudo cp conf/hosts /etc/
+
+php artisan cache:clear
+chmod -R 777 storage/
+composer dump-autoload
+
+<import certificate into firefox>
 ######################################
 Geslo za uvoz certifikatov: ep
 ######################################
