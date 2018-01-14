@@ -31,12 +31,16 @@ sudo a2enmod rewrite
 sudo a2dissite 000-default.conf
 sudo a2ensite laravel.conf
 sudo a2ensite laravel-ssl.conf
-sudo service apache2 restart
 sudo cp conf/hosts /etc/
+
+sudo cp conf/posts.conf /etc/apache2/
 
 php artisan cache:clear
 chmod -R 777 storage/
 composer dump-autoload
+
+sudo service apache2 restart
+
 
 <import certificate into firefox>
 ######################################
