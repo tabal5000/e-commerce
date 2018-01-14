@@ -56,6 +56,7 @@ class UsersTableSeeder extends Seeder
       $staff->email = 'ana@ep.si';
       $staff->phone_number = '031264278';
       $staff->password = bcrypt('pass');
+      $staff->verified = 1;
       $staff->save();
       $staff->roles()->attach($role_staff);
 
@@ -66,6 +67,7 @@ class UsersTableSeeder extends Seeder
       $staff->email = 'tabs@ep.si';
       $staff->phone_number = '055111321';
       $staff->password = bcrypt('pass');
+      $staff->verified = 1;
       $staff->save();
       $staff->roles()->attach($role_staff);
 
@@ -76,6 +78,7 @@ class UsersTableSeeder extends Seeder
       $customer->email = 'ettie35@haag.com';
       $customer->phone_number = '313-131-131';
       $customer->password = bcrypt('pass');
+      $customer->verified = 1;
       $customer->save();
       $customer->roles()->attach($role_customer);
       $customer->orders()->save($first_order);
@@ -88,6 +91,7 @@ class UsersTableSeeder extends Seeder
       $customer->email = 'scarlett.cassin@yahoo.com';
       $customer->phone_number = '+1 (970) 508-5542';
       $customer->password = bcrypt('pass');
+      $customer->verified = 1;
       $customer->save();
       $customer->roles()->attach($role_customer);
       $customer->orders()->save($third_order);
@@ -100,6 +104,7 @@ class UsersTableSeeder extends Seeder
       $customer->email = 'morgan19@gmail.com';
       $customer->phone_number = '523-319-0632';
       $customer->password = bcrypt('pass');
+      $customer->verified = 1;
       $customer->save();
       $customer->roles()->attach($role_customer);
       $customer->orders()->save($fifth_order);
@@ -112,6 +117,7 @@ class UsersTableSeeder extends Seeder
             'password' => bcrypt('pass'),
             'address' => $faker->address,
             'phone_number' => $faker->phoneNumber,
+            'verified' => 1,
           ]);
           $user
              ->roles()

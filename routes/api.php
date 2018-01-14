@@ -30,6 +30,9 @@ Route::put('/items/{item}', 'ItemsAPIController@update');
 
 Route::delete('/items/{item}', 'ItemsAPIController@delete');
 
+Route::get('/items/{item}/activate','ItemsAPIController@activateProduct');
+Route::get('/items/{item}/deactivate','ItemsAPIController@deactivateProduct');
+
 //Users API
 
 Route::get('/users','UsersAPIController@index');

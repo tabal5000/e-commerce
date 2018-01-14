@@ -35,12 +35,15 @@
                                 <a href="/items/{{$item->id}}/edit"class="btn btn-info" id="addToCartBtn">Edit item</a>
                               </div>
                               <div class="col-md-3">
-                                {{ Form::open(['url' => '/items/' . $item->id, 'method' => 'DELETE']) }}
-                                  <button type="submit" class="btn btn-danger" id="addToCartBtn">
-                                    Delete
-                                  </button>
-
-                                {{ Form::close() }}
+                                  @if ($item->active == '1')
+                                  <a href="/items/{{$item->id}}/deactivate" class="btn btn-danger" id="addToCartBtn">
+                                    Deactivate
+                                  </a>
+                                  @else
+                                  <a href="/items/{{$item->id}}/activate" class="btn btn-success" id="addToCartBtn">
+                                    Activate
+                                  </a>
+                                @endif
                               </div>
                               @endif
                             @endauth

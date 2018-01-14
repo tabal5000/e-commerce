@@ -1,11 +1,3 @@
-input[type="number"]::-webkit-outer-spin-button,
-input[type="number"]::-webkit-inner-spin-button {
-    -webkit-appearance: none;
-    margin: 0;
-}
-input[type="number"] {
-    -moz-appearance: textfield;
-}
 
 .showItemImg {
   max-width: 160px;
@@ -22,6 +14,50 @@ table {
 
 table .btn {
   font-size: 100%;
+}
+
+.button-pay {
+  float: left;
+  display: block;
+  background: #34D08C;
+  color: white;
+  border-radius: 2px;
+  border: 0;
+  margin-top: 20px;
+  font-size: 21px;
+  font-weight: 400;
+  width: 100%;
+  height: 55px;
+  line-height: 45px;
+  outline: none;
+}
+
+.field {
+  background: transparent;
+  font-weight: 300;
+  border: 0;
+  border: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.field:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+#card-element {
+  margin-top: 5px;
+}
+
+.error.visible {
+  color: #E4584C;
+  display: inline;
+  text-align: center;
+  float: left;
+  width: 100%;
+  padding-top: 8px;
+  min-height: 20px;
 }
 
 /* TODO:

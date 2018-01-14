@@ -74,6 +74,7 @@ class UsersAPIController extends Controller
 
     public function delete(User $user)
     {
+        $user->orders()->delete();
         $user->delete();
 
         return response()->json(null, 204);

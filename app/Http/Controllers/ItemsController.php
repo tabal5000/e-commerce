@@ -87,4 +87,18 @@ class ItemsController extends Controller
       Session::put('cart',$cart);
       return redirect()->back();
     }
+
+    public function deactivateProduct(Item $item)
+    {
+      $request = Request::create('/api/items/' . $item->id . '/deactivate' , 'GET');
+      $response = Route::dispatch($request);
+      return redirect('/items');
+    }
+
+    public function activateProduct(Item $item)
+    {
+      $request = Request::create('/api/items/' . $item->id . '/activate' , 'GET');
+      $response = Route::dispatch($request);
+      return redirect('/items');
+    }
 }

@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>MyApp</title>
+    <title>SuperDuperBeer</title>
 
     <!-- Styles -->
     <link href="/css/app.css" rel="stylesheet">
@@ -27,5 +27,6 @@
 
     <script src="/js/app.js"></script>
     <script src="/js/helper.js"></script>
+    @yield('scripts')
 </body>
 </html>

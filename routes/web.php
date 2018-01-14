@@ -26,7 +26,8 @@ Route::resource('/login','SessionsController', [
 ]);
 
 Route::get('/','ItemsController@index');
-
+Route::get('/items/{item}/activate','ItemsController@activateProduct');
+Route::get('/items/{item}/deactivate','ItemsController@deactivateProduct');
 Route::resource('/items','ItemsController');
 
 Route::get('/orders','OrdersController@index');
